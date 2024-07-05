@@ -44,7 +44,7 @@ class UserByIdResource(Resource):
         parser.add_argument('password', required=True)
         args = parser.parse_args()
         user = User(**args)
-        result = mongo.db.users.update_one({"_id": ObjectId(id)}, {"$set": user.to_dict()})
+        result = mongo.db.users.update_one({"_id": ObjectId(id)}, {"set": user.to_dict()})
         if result.matched_count:
             return {'successfully Updated': True}
         else:
