@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+//Flask-Restful is directory name
+  Flask-Restful:
+    image: Flask-Restful
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5000:5000
